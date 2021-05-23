@@ -6,8 +6,8 @@ import gspread
 
 ##access sheets
 gc = gspread.service_account(filename= "/home/suryathanush/inventech/api_credentials.json")
-sheet1 = gc.open_by_key('1nqFm5ROoHK-_DcoV6IBRiC8SgpBWGQCo4S7jWkUNOUw').worksheet("response form")
-sheet2 = gc.open_by_key('1nqFm5ROoHK-_DcoV6IBRiC8SgpBWGQCo4S7jWkUNOUw').worksheet("reward form")
+sheet1 = gc.open_by_key('<google sheets url key>').worksheet("response form")
+sheet2 = gc.open_by_key('<google sheets url key').worksheet("reward form")
 
 ##acess gmail-smtp
 def send_email(to,subject, msg):
@@ -98,7 +98,7 @@ while(True):
                 sheet1.update_cell(j,9,sheet2.cell(i,3).value)
                 print("phone number of", sheet1.cell(j,2).value ,"is updated")
             else:
-                print("@@@@@@@@@@")    
+                pass  
         
         if len(sheet1.cell(j,6).value) == 0:
             break
